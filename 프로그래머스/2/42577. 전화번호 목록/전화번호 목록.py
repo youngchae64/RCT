@@ -1,14 +1,15 @@
 def solution(phone_book):
     
-    #sort() 메서드는 원본 리스트를 정렬하고 None을 반환
-    # phone_book = phone_book.sort() 는 None 
-    phone_book.sort() #이건 그냥 정렬 
+    #배열 길이순으로 정렬 
+    phone_book.sort()
     
-    #answer = True 
-    
-    for p1, p2 in zip(phone_book, phone_book[1:]):
-        if p2.startswith(p1):
-            #answer = False
-            return False
-        
-    return True
+    for i in range(len(phone_book) -1):
+        word = phone_book[i]
+        #첫번째 원소부터 길이 구하고 
+        length = len(phone_book[i])
+        new_word = phone_book[i+1]
+        if(word == new_word[0:length]):
+            return False 
+        else:
+            pass
+    return True 
